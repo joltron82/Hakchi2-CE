@@ -1,27 +1,31 @@
-	
-Markdown converts text to HTML.
-
-*[HTML]: HyperText Markup Language
-
 # HAKCHI FAQ
 ***
 ***
 
 ## General 
 ***
-#### What is Hakchi
+#### What is hakchi
 
-Hakchi is a modification for the Nintendo Classic and Sega Mini systems that gives you the ability to add additional games and content to your system.
+hakchi2 CE is a modification program for Retro gaming consoles that provides the ability to add additional games and content to the console. 
+Examples include
+Nintendo: NES, SNES, Famicom, Super Famicom
+Sega: Genesis, Mega Drive
 
-Hakchi was created by madmonkey and has received contributions from numerous contributors. 
+## Notes on previous versions
+hakchi, hakchi2 and hakchi2-CE are 3 separate entities.
 
-Hakchi2 is the frontend for hakchi, hakchi2 was originally created by clusterm and has since been forked into Hakchi2 CE which is maintained by Team Shinkansen.
+hakchi is the modification installed on mini systesm that gives you the ability to add additional games and content to your system.
+hakchi was created by madmonkey and has received contributions from numerous contributors. 
 
-Hakchi2 CE by Team Shinkansen is the preferred tool for managing and installing Hakchi onto consoles.
+hakchi2 is the frontend for hakchi, hakchi2 was originally created by clusterm and has since been forked into hakchi2 CE which is maintained by Team Shinkansen.
+
+hakchi2 CE by Team Shinkansen is the preferred tool for managing and installing hakchi onto consoles.
+
+Throughout this document hakchi is used in general for both hakchi and hackhi2 CE
  
 
 #### Where can I download it?
-Hakchi2 CE can be found from the Team Shinkansen releases page on GitHub.
+hakchi2 CE can be found from the Team Shinkansen releases page on GitHub.
 
 http://github.com/teamshinkansen/hakchi2-ce/releases/
 
@@ -33,14 +37,14 @@ Rockin' The Classics Discord Server https://discord.gg/C9EDFyg
 
 /r/hakchi on Reddit https://reddit.com/r/hakchi/  
 
-#### What systems does Hakchi support?
+#### What systems does hakchi support?
 NES classic edition  /  Famicom   
 SNES classic edition  /  Super Famicon  
 Sega genesis mini  /  Megadrive  
 
 ## Features
 <details>
-  <summary>Hakchi 3.7.0 Features.</summary>
+  <summary>hakchi 3.7.0 Features.</summary>
 
 
 This release brings full UI integration to the Sega mini systems, it also makes use of additional space from the NAND that wasn't previously usable, so you get more space for all your games!
@@ -95,6 +99,7 @@ Realtek Mini USB Wireless
 - 8bitdo most should work in wired mode 
 - Old sega saturn usb controller (cypress)  
 - *Retrobit genesis 6 button and Saturn controllers both work (need mapping?)  
+- Retro Fighters BrawlerGen Genesis Mini Controller 6 button
 
 #### OTG adapters
 https://www.amazon.com/gp/product/B07FY9Z9GD?pldnSite=1
@@ -112,7 +117,7 @@ MakerSpot Micro USB OTG Hub can be used if you feel up to soldering a USB end on
 
 
 ***
-## Hakchi
+## hakchi
 ***
 #### Menu items
 #### Kernel
@@ -266,12 +271,12 @@ Adds more games to current games list
 
 ##### Export to USB
 Syncs your checked games to a USB stick.  Requires  a USB 2.0 or 3.0 (system usb ports are only 2.0) formatted to EXT4 or NTFS.  
-Insert USB into your PC running Hakchi and press export.  
+Insert USB into your PC running hakchi and press export.  
 Safely remove  
 While mini is powered off insert into port 2 or OTG on your mini. 
 Power on  
  
-When using USB storage on your min and Hakchi is connected the space estimation in the bottom right corner now reflects the USB storage.  And pressing SYNC now syncs with the USB NOT the mini.
+When using USB storage on your min and hakchi is connected the space estimation in the bottom right corner now reflects the USB storage.  And pressing SYNC now syncs with the USB NOT the mini.
 
 ???Linked sync notes and menu locaiton
 ???Seperate games check box
@@ -299,7 +304,7 @@ XMB
 TODO
 
 #### Install RetroArch
-Hakchi > Modules > KMFD's Mod Hub
+hakchi > Modules > KMFD's Mod Hub
 KMDF RetroArch (tab)
 Select your UI flavor
 - Ozone (Grey list style)
@@ -307,12 +312,12 @@ Select your UI flavor
 Click 'Download and Install Module'
 
 #### Install cores
-Hakchi > Modules > KMFD's Mod Hub
+hakchi > Modules > KMFD's Mod Hub
 KMDF Cores (tab)
 Either select individual cores and click 'Download and Install Modules'
 OR 
 select various  modules and download them and use  
-Hakchi > Modules > Install extra modules
+hakchi > Modules > Install extra modules
 
 ***
 ## General
@@ -320,15 +325,20 @@ Hakchi > Modules > Install extra modules
 ####  When updating will I lose my saves
 No
 
+####  Can I launch RetroArch directly from the UI
+Yes, install the "CLV-Z-RARCH" game and sync
+
 #### I screwed up my mapping for my gamepad and can't reset it.
 Reinstall RetroArch to get back to default settings
 
 #### Enabling wifi
-Hakchi > Modules > KMFD's Mod Hub > KMFD System (tab) > WPA Supplicant  
+hakchi > Modules > KMFD's Mod Hub > KMFD System (tab) > WPA Supplicant  
 Connect to the console using telnet/ssh
 Type **wifi-wpa-setup** and enter your SSID and password when asked.  
 Then follow instructions on screen  
 USB wifi adapter can be plugged into any port on the Sega mini when instructed.  On S/NES it will be plugged into an OTG cable.
+**While rebooting the wifi adapter must be the only usb device plugged in**
+**Failure to do so will require un-installing WPA Supplicant and starting over**
 
 #### Sega CD config
 USB storage required due to the size of CD games
@@ -363,10 +373,8 @@ ROM formats -
 
 Minimum power supply recomended  1.5
 
-Additional storage space gained with Hakchi CE 3.7  
-Pre mod -   
+Additional storage space gained with hakchi CE 3.7    
 Additional gained - 54mb
-Post mod - 180mb  
 **Storage resize will revert back to stock after uninstalling**
 
 Clock speed   
@@ -377,6 +385,8 @@ Overclock - 1344000
  - --3bpad=1   
 	Used for games like zombies ate my neighbors that won't work with 6 button pads  
 	example - /bin/m2engage /var/games/CLV-G-XXSMB/Zombies_Ate_My_Neighbors.md.7z --3bpad=1  
+ - --smooth43=1  
+	command line for factory scan lines (stock emulator only)  
 	
 #### Overclock options
 While overclocking your machine MAY become unstable and crash.  This is due to the quality of the manufactured CPU.  If you experience  crashing please disable any overclocking.
@@ -388,9 +398,9 @@ Easy overclock from the Modules > KMFD's Mod hub > Games (tab).  When sync'd thi
 Other but not preffered  methods.
 Xtreme overclock is always active and can be found in Modules > KMFD's Mod hub > KMFD RetroArch (tab) > Xreme Overclock
 		NOTE: Can be verified  and toggled via telnet.  Stock freq - 1008000, Overclock freq - 1344000.
-			 - Hakchi overclock - Display current speed and temp
-			 - Hakchi overclock boot - Set default clock speed
-			 - Hakchi overclock max - Enables overclock
+			 - hakchi overclock - Display current speed and temp
+			 - hakchi overclock boot - Set default clock speed
+			 - hakchi overclock max - Enables overclock
 
 		NOTE: Maintains after power cycle
 	
@@ -401,12 +411,12 @@ If --overclock is added to the command line of a RetroArch game the system will 
 #### Launching games from Sega UI  
   Press "A" to launch games with stock M2 emulator    
   Press "Start" to launch games with Retroach (if installed)  
-  To specify  a core, Right click on a game from the Hakchi "Custom Games" list and click "Select emulation core..."   
+  To specify  a core, Right click on a game from the hakchi "Custom Games" list and click "Select emulation core..."   
   
   When launching a game if a description does not exist it will launch directly into the game.  If a description does exist the standard game info box will pop up prior to game starting.
   
 #### Installing after using other mods
-  So Hakchi detected modified files, what does this mean?  
+  So hakchi detected modified files, what does this mean?  
 	    
 		"The system files appear to have been modified:
 	    Version: MOON-mass-moon-es1-v0.8.3-108EU-1f2365d
@@ -432,14 +442,14 @@ Overclock - 1344000
 Storage size: 381.6MB, used: 17.0MB, free: 344.9MB
 Storage size: 396.1MB, used: 17.6MB, free: 366.3MB
 
-Additional storage space gained with Hakchi CE 3.7
+Additional storage space gained with hakchi CE 3.7
 Storage size: 395.6MB, used: 19.5MB, free: 363.9MB
  
  
 **Storage resize is permanent**
 
 **SNES
-Additional storage space gained with Hakchi CE 3.7  
+Additional storage space gained with hakchi CE 3.7  
 Pre mod -   
 Additional gained - 
 Post mod - 318mb
