@@ -1,6 +1,6 @@
-[General](./page2.md)
-[Supported devices](./page2.md)
-[hakchi2-CE UI](./page2.md)
+[General](./page2.md)  
+[Supported devices](./page2.md)  
+[hakchi2-CE UI](./page2.md)  
 # HAKCHI FAQ
 ***
 ***
