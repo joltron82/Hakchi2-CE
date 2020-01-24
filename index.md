@@ -1,5 +1,5 @@
-[page2](./page2.md)
-[page3](./page2.md)
+[General](./page2.md)
+[Supported devices](./page2.md)
 # HAKCHI FAQ
 ***
 ***
