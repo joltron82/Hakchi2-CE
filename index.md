@@ -1,4 +1,5 @@
 [page2](./page2.md)
+[page3](./page2.md)
 # HAKCHI FAQ
 ***
 ***
