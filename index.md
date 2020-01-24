@@ -12,7 +12,7 @@ Examples include
 Nintendo: NES, SNES, Famicom, Super Famicom
 Sega: Genesis, Mega Drive
 
-## Notes on previous versions
+#### Notes on previous versions
 hakchi, hakchi2 and hakchi2-CE are 3 separate entities.
 
 hakchi is the modification installed on mini systesm that gives you the ability to add additional games and content to your system.
